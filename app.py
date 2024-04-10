@@ -73,17 +73,21 @@ def main():
             # Check the number of features extracted
             st.write('Number of features extracted:', len(features))
 
-            # Check the number of features in the model
-            st.write('Number of features in the model:', len(X_train.columns))
-
-            # Ensure number of features matches
-            if len(features) == len(X_train.columns):
-                # Predict label
-                st.write('Predicting label...')
-                label = rf_model.predict(features.reshape(1, -1))[0]
-                st.write('Predicted Label:', label)
+            # Ensure model is trained before accessing X_train
+            if 'X_train' in locals():
+                # Check the number of features in the model
+                st.write('Number of features in the model:', len(X_train.columns))
+                
+                # Ensure number of features matches
+                if len(features) == len(X_train.columns):
+                    # Predict label
+                    st.write('Predicting label...')
+                    label = rf_model.predict(features.reshape(1, -1))[0]
+                    st.write('Predicted Label:', label)
+                else:
+                    st.write('Number of features extracted does not match the model. Please upload a file with the correct number of features.')
             else:
-                st.write('Number of features extracted does not match the model. Please upload a file with the correct number of features.')
+                st.write('Model has not been trained. Please train the model before making predictions.')
 
 if __name__ == "__main__":
     main()
