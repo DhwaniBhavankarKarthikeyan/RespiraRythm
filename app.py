@@ -12,8 +12,49 @@ def about_us():
     st.title('About Us')
     st.write('Welcome to the About Us page!')
 
-# Main function to switch between pages
 def main():
+    # Custom CSS for the navigation bar
+    st.markdown(
+        """
+        <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #02ab21;
+            color: white;
+        }
+        </style>
+        """
+    )
+
+    # Create navigation bar
+    st.markdown(
+        """
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#predict">Predict</a>
+            <a href="#about">About Us</a>
+        </div>
+        """
+    )
+
     st.sidebar.title('Navigation')
     
     # Apply CSS to make buttons occupy full height
