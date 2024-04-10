@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import alerts
-from patients import patients  # Importing the patients function
+#import alerts
+#from patients import patients  # Importing the patients function
 
 # Hardcoded username and password
 USERNAME = "admin"
