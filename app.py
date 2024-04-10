@@ -15,6 +15,23 @@ def about_us():
 # Main function to switch between pages
 def main():
     st.sidebar.title('Navigation')
+    
+    # Apply CSS to make buttons occupy full height
+    st.markdown("""
+        <style>
+        .sidebar .sidebar-content {
+            max-width: 100%;
+        }
+        .sidebar .sidebar-content .block-container {
+            width: 100%;
+        }
+        .sidebar .css-1tppvg2 {
+            width: 100%;
+            text-align: left;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
     option = st.sidebar.button('Home')
     if option:
         home()
