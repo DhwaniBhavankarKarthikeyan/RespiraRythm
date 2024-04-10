@@ -69,12 +69,21 @@ def main():
             # Extract poly features
             st.write('Extracting poly features...')
             features = extract_poly_features("temp_audio.wav")
-            st.write('Poly features extracted successfully.')
+            
+            # Check the number of features extracted
+            st.write('Number of features extracted:', len(features))
 
-            # Predict label
-            st.write('Predicting label...')
-            label = rf_model.predict(features.reshape(1, -1))[0]
-            st.write('Predicted Label:', label)
+            # Check the number of features in the model
+            st.write('Number of features in the model:', len(X_train.columns))
+
+            # Ensure number of features matches
+            if len(features) == len(X_train.columns):
+                # Predict label
+                st.write('Predicting label...')
+                label = rf_model.predict(features.reshape(1, -1))[0]
+                st.write('Predicted Label:', label)
+            else:
+                st.write('Number of features extracted does not match the model. Please upload a file with the correct number of features.')
 
 if __name__ == "__main__":
     main()
