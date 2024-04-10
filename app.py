@@ -45,9 +45,11 @@ def main():
             st.write('Model is ready for prediction.')
 
             # Save trained model
+            # Save trained model
             st.write('Saving model...')
-            joblib.dump(rf_classifier, 'rf_model.pkl')
+            joblib.dump(rf_model, 'rf_model.pkl')
             st.write('Model saved as rf_model.pkl.')
+
 
     elif option == 'Predict':
         st.title('Predict')
