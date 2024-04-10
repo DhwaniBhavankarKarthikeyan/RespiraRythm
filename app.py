@@ -19,7 +19,8 @@ def main():
 
     # Load the poly features CSV file
     csv_url = "https://github.com/DhwaniBhavankarKarthikeyan/RespiraRythm/blob/main/POLY_Final.csv"  # Update with your GitHub URL
-    df = pd.read_csv(csv_url)
+    df = pd.read_csv(csv_url, encoding='utf-8', delimiter=',')
+
 
     # Extract the number of features
     num_features = len(df.columns) - 2  # Exclude the 'Label' column
