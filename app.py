@@ -1,51 +1,51 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+import joblib
 
+# Function to predict label using saved model
+def predict_label(features, model):
+    # Predict label
+    label = model.predict(features)
+    return label
 
-
-def home():
-    st.title('Home')
-    st.write('Welcome to the Home page!')
-
-def predict():
+def predict_page(model):
     st.title('Predict')
     st.write('Welcome to the Predict page!')
+    
+    # File uploader for feature values (poly features)
+    uploaded_file = st.file_uploader("Upload CSV File with Poly Features", type=["csv"])
+    
+    # Button to predict
+    if st.button('Predict') and uploaded_file is not None:
+        # Load CSV file containing poly features
+        df = pd.read_csv(uploaded_file)
+        # Extract features
+        features = df.drop(['File Names', 'Label'], axis=1).values
+        
+        # Predict label
+        label = predict_label(features, model)
+        
+        # Display prediction
+        st.write('Predicted Label:', label)
 
-def about_us():
-    st.title('About Us')
-    st.write('Welcome to the About Us page!')
-
-# Main function to switch between pages
 def main():
+    # Load trained RandomForestClassifier
+    classifier = joblib.load('rf_model.pkl')
+    
     st.sidebar.title('Navigation')
     
-    # Apply CSS to make buttons occupy full height
-    st.markdown("""
-        <style>
-        .sidebar .sidebar-content {
-            max-width: 100%;
-        }
-        .sidebar .sidebar-content .block-container {
-            width: 100%;
-        }
-        .sidebar .css-1tppvg2 {
-            width: 100%;
-            text-align: left;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+    option = st.sidebar.radio('Go to', ['Home', 'Predict', 'About Us'])
     
-    option = st.sidebar.button('Home')
-    if option:
-        home()
-        
-    option = st.sidebar.button('Predict')
-    if option:
-        predict()
-        
-    option = st.sidebar.button('About Us')
-    if option:
-        about_us()
+    if option == 'Home':
+        st.title('Home')
+        st.write('Welcome to the Home page!')
+    elif option == 'Predict':
+        predict_page(classifier)
+    elif option == 'About Us':
+        st.title('About Us')
+        st.write('Welcome to the About Us page!')
 
 if __name__ == "__main__":
     main()
