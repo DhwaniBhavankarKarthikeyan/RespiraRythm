@@ -17,7 +17,7 @@ class MultiApp:
         with st. sidebar:
             app = option_menu(
                 menu title='Pondering ',
-                options=[ 'Home', 'Account', 'Trending', 'Your Posts icons=| 'house-fill', 'person-circle' ,'trophy-fill menu_icon='chat-text-fill', default_index=1,
+                options=[ 'Home', 'Account', 'Trending', 'Your Posts icons=| 'house-fill', 'person-circle' ,'trophy-fill menu_icon='chat-text-fill', default_index=1],
                 styles={
             "container": {"padding": "5! important", "background-color":"black"},
             "icon": {"color": "white", "font-size": "23px"},
