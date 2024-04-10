@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 
 def home():
     st.title('Home')
-    st.write('Welcome to the  page!')
+    st.write('Welcome to the Home page!')
 
 def predict():
     st.title('Predict')
