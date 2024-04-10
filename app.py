@@ -22,18 +22,7 @@ class MultiApp:
             return
 
         with st.sidebar:
-            app = option_menu(
-                menu_title="MedWatcher",
-                options=['Home', 'Predict', 'About Us'], 
-                default_index=0,
-                styles={
-                    "container": {"padding": "5!important", "background-color": 'black'},
-                    "icon": {"color": "white", "font-size": "23px"},
-                    "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
-                                 "--hover-color": "blue"},
-                    "nav-link-selected": {"background-color": "#02ab21"},
-                }
-            )
+            app = st.sidebar.selectbox("MedWatcher", ['Home', 'Predict', 'About Us'])
 
         for app_item in self.apps:
             if app_item['title'] == app:
