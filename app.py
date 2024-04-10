@@ -8,10 +8,10 @@ from sklearn.metrics import classification_report
 import joblib
 
 # Function to extract poly features from audio file
-def extract_poly_features(audio_file):
+def extract_poly_features(audio_file, num_features):
     y, sr = librosa.load(audio_file, sr=None)
     poly_features = librosa.feature.poly_features(y=y, sr=sr)
-    flattened_features = np.ravel(poly_features)
+    flattened_features = np.ravel(poly_features)[:num_features]
     return flattened_features
 
 def main():
@@ -69,29 +69,20 @@ def main():
 
                         # Extract poly features
                         st.write('Extracting poly features...')
-                        features = extract_poly_features("temp_audio.wav")
+                        num_features = len(X_train.columns)
+                        features = extract_poly_features("temp_audio.wav", num_features)
 
                         # Check the number of features extracted
                         st.write('Number of features extracted:', len(features))
 
-                        # Load X_train if it's available
-                        if 'X_train' in locals():
-                            # Check the number of features in the model
-                            st.write('Number of features in the model:', len(X_train.columns))
-
-                            # Ensure number of features matches
-                            if len(features) == len(X_train.columns):
-                                # Retain only the first x number of features
-                                features = features[:len(X_train.columns)]
-
-                                # Predict label
-                                st.write('Predicting label...')
-                                label = rf_model.predict(features.reshape(1, -1))[0]
-                                st.write('Predicted Label:', label)
-                            else:
-                                st.write('Number of features extracted does not match the model. Please upload a file with the correct number of features.')
+                        # Ensure number of features matches
+                        if len(features) == num_features:
+                            # Predict label
+                            st.write('Predicting label...')
+                            label = rf_model.predict(features.reshape(1, -1))[0]
+                            st.write('Predicted Label:', label)
                         else:
-                            st.write('Model has not been trained. Please train the model before making predictions.')
+                            st.write('Number of features extracted does not match the model. Please upload a file with the correct number of features.')
                     except Exception as e:
                         st.error(f"An error occurred during prediction: {e}")
             except Exception as e:
