@@ -1,37 +1,11 @@
-import streamlit as st
-from streamlit_option_menu import option_menu
+def predict():
+    st.write("# Predict")
+    st.write("This page will contain functionalities related to predicting glucose levels.")
+    # Add your prediction functionalities here
 
-def home():
-    
-
-    st.write("# Home Page")
-    st.write("Welcome to MedWatcher!")
-    st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
-    st.write("With MedWatcher, you can:")
-    st.write("- View detailed patient information, including glucose data and relevant tasks.")
-    st.write("- Analyze glucose trends over time with interactive charts.")
-    st.write("- Receive alerts for glucose levels outside the normal range.")
-    st.write("To get started, navigate using the sidebar on the left.")
-
-
-
-
-def about_us():
-    
-    st.write("# About Us")
-    st.write("MedWatcher is a platform dedicated to improving diabetes management for patients and healthcare providers.")
-    st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
-    st.write("For any inquiries or feedback, please contact us at contact@medwatcher.com.")
-    
-    # Add your photo, name, and email ID
-    st.write("## Meet the Team")
-    
-   
-        
 def add_patients():
     st.write("# Add Patients")
-    
-
+    # Add your functionalities for adding patients here
 
 class MultiApp:
     def __init__(self):
@@ -61,15 +35,13 @@ class MultiApp:
                 }
             )
 
-        if app == "Home":
-            home()
-        elif app == 'Predict':
-            
-               
-            
-        elif app == 'About Us':  # Handling 'About Us' page
-            '''about_us()'''
+        for app_item in self.apps:
+            if app_item['title'] == app:
+                app_item['function']()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
+    multi_app.add_app("Home", home)
+    multi_app.add_app("Predict", predict)  # Add the 'Predict' page
+    multi_app.add_app("About Us", about_us)
     multi_app.run()
