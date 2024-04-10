@@ -90,4 +90,4 @@ def main():
                     st.write('Model has not been trained. Please train the model before making predictions.')
     
     if __name__ == "__main__":
-    main()
+        main()
