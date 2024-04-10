@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 
 def home():
@@ -16,13 +15,16 @@ def about_us():
 # Main function to switch between pages
 def main():
     st.sidebar.title('Navigation')
-    page = st.sidebar.selectbox('Select a page', ['Home', 'Predict', 'About Us'])
-
-    if page == 'Home':
+    option = st.sidebar.button('Home')
+    if option:
         home()
-    elif page == 'Predict':
+        
+    option = st.sidebar.button('Predict')
+    if option:
         predict()
-    elif page == 'About Us':
+        
+    option = st.sidebar.button('About Us')
+    if option:
         about_us()
 
 if __name__ == "__main__":
