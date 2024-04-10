@@ -81,6 +81,9 @@ def main():
 
                             # Ensure number of features matches
                             if len(features) == len(X_train.columns):
+                                # Retain only the first x number of features
+                                features = features[:len(X_train.columns)]
+
                                 # Predict label
                                 st.write('Predicting label...')
                                 label = rf_model.predict(features.reshape(1, -1))[0]
