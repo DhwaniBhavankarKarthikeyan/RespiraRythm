@@ -18,7 +18,7 @@ def main():
     st.write('Welcome to the Predict page!')
 
     # Load the poly features CSV file
-    csv_url = "https://raw.githubusercontent.com/your_username/your_repo/main/poly_features.csv"  # Update with your GitHub URL
+    csv_url = "https://github.com/DhwaniBhavankarKarthikeyan/RespiraRythm/blob/main/POLY_Final.csv"  # Update with your GitHub URL
     df = pd.read_csv(csv_url)
 
     # Extract the number of features
