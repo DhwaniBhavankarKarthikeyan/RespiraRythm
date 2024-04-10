@@ -1,44 +1,9 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st.set_page_config(
-    page_title="Navigator"
-)
 
-class MultiApp:
-    def __init__(self):
-        self.apps=[]
-    def add_app(self, title, function):
-        self.apps.append({
-            "title"=title,
-            "function"=function
-        })
-    def run() :
-        with st. sidebar:
-            app = option_menu(
-                menu title='Pondering ',
-                options=[ 'Home', 'Account', 'Trending', 'Your Posts icons=| 'house-fill', 'person-circle' ,'trophy-fill menu_icon='chat-text-fill', default_index=1],
-                styles={
-            "container": {"padding": "5! important", "background-color":"black"},
-            "icon": {"color": "white", "font-size": "23px"},
-            "nav-link": {"color": "white", "font-size": "20px", "text-align":"left", "margin":"0px"}
-            "nav-link-selected": {"background-color": "#02ab21"},}
-            )
-            if app=='Home':
-                st.title('Home')
-                st.write('Welcome to the Home page!')
 
-            if app=='Predict':
-                st.title('Predict')
-                st.write('Welcome to the Predict page!')
-            if app=='About Us':
-                st.title('About Us')
-                st.write('Welcome to the About Us page!')
-
-        run()
-            
-
-'''def home():
+def home():
     st.title('Home')
     st.write('Welcome to the Home page!')
 
@@ -83,4 +48,4 @@ def main():
         about_us()
 
 if __name__ == "__main__":
-    main()'''
+    main()
