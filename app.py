@@ -73,11 +73,11 @@ def main():
             # Check the number of features extracted
             st.write('Number of features extracted:', len(features))
 
-            # Ensure model is trained before accessing X_train
+            # Load X_train if it's available
             if 'X_train' in locals():
                 # Check the number of features in the model
                 st.write('Number of features in the model:', len(X_train.columns))
-                
+
                 # Ensure number of features matches
                 if len(features) == len(X_train.columns):
                     # Predict label
