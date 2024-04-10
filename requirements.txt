@@ -4,3 +4,4 @@ numpy==1.21.2
 streamlit-option-menu==0.3.2
 altair==5.2.0
 PyGithub==1.55
+streamlit-option-menu==0.3.2
