@@ -1,6 +1,10 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+st.set_page_config(
+    page_title="Navigator"
+)
+
 def home():
     st.title('Home')
     st.write('Welcome to the Home page!')
