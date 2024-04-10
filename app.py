@@ -5,6 +5,7 @@ import librosa
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+import joblib
 
 # Function to extract poly features from audio file
 def extract_poly_features(audio_file):
@@ -33,23 +34,21 @@ def main():
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
             st.write('Training model...')
-            rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-            rf_classifier.fit(X_train, y_train)
+            rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+            rf_model.fit(X_train, y_train)
             st.write('Model training complete!')
 
             st.write('Evaluating model...')
-            y_pred = rf_classifier.predict(X_test)
+            y_pred = rf_model.predict(X_test)
             st.write('Classification Report:')
             st.write(classification_report(y_test, y_pred))
 
             st.write('Model is ready for prediction.')
 
             # Save trained model
-            # Save trained model
             st.write('Saving model...')
             joblib.dump(rf_model, 'rf_model.pkl')
             st.write('Model saved as rf_model.pkl.')
-
 
     elif option == 'Predict':
         st.title('Predict')
@@ -60,7 +59,7 @@ def main():
         if uploaded_audio is not None:
             # Load trained model
             st.write('Loading model...')
-            model = joblib.load('rf_model.pkl')
+            rf_model = joblib.load('rf_model.pkl')
             st.write('Model loaded successfully.')
 
             # Save the uploaded audio file to disk
@@ -74,7 +73,7 @@ def main():
 
             # Predict label
             st.write('Predicting label...')
-            label = model.predict(features.reshape(1, -1))[0]
+            label = rf_model.predict(features.reshape(1, -1))[0]
             st.write('Predicted Label:', label)
 
 if __name__ == "__main__":
