@@ -19,7 +19,10 @@ def about_us():
     st.write('Welcome to the About Us page!')
     st.write('We are B.Tech students pursuing Artificial Intelligence and Machine Learning at Symbiosis Institute of Technology (SIT), Pune.\n')
     st.write('Our Mission: To help improve the diagnostic accuracy of classifying respiratory diseases based on breathing sounds, while reducing diagnostic costs. All through the power of data and ML.\n')
-
+    st.write('Ananya Mehta \n \n')
+    st.write('Aparna Iyer \n \n')
+    st.write('Deeksha Mandal \n \n')
+    st.write('Dhwani Bhavankar \n \n')
 # Main function to switch between pages
 def main():
     st.sidebar.title('Navigation')
