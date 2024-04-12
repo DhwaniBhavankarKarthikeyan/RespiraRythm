@@ -17,6 +17,8 @@ def predict():
 def about_us():
     st.title('About Us')
     st.write('Welcome to the About Us page!')
+    st.write('We are B.Tech students pursuing Artificial Intelligence and Machine Learning at Symbiosis Institute of Technology (SIT), Pune.\n')
+    st.write('Our Mission: To help improve the diagnostic accuracy of classifying respiratory diseases based on breathing sounds, while reducing diagnostic costs. All through the power of data and ML.\n')
 
 # Main function to switch between pages
 def main():
