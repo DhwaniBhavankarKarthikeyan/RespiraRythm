@@ -4,11 +4,11 @@ from streamlit_option_menu import option_menu
 def home():
     st.title('Home')
     st.write('Welcome to the Home page!\n')
-    st.write('Hello and welcome to Respira Rhythm Classifier!\n Thank you for taking the judicious step of using this application. By visiting this page, you have joined us in a very important cause- the cause of proactively monitoring your health without waiting for symptomatic check-up, diagnosis and treatment. 
-\n \n This matters because lung diseases are the third-largest cause of death in the world. According to the World Health Organization (WHO), the five major respiratory diseases cause the death of more than 3 million people worldwide each year. Furthermore, respiratory problems are progressive in nature, worsening the respiratory potential of the human lungs over time.
+    st.write('Hello and welcome to Respira Rhythm Classifier!
+    \nThank you for taking the judicious step of using this application. By visiting this page, you have joined us in a very important cause- the cause of proactively monitoring your health without waiting for symptomatic check-up, diagnosis and treatment. 
+    \n \n This matters because lung diseases are the third-largest cause of death in the world. According to the World Health Organization (WHO), the five major respiratory diseases cause the death of more than 3 million people worldwide each year. Furthermore, respiratory problems are progressive in nature, worsening the respiratory potential of the human lungs over time.
 \n \n  We believe that prevention is better than cure. To facilitate simple, quick and virtually cost-free diagnostic access for monitoring respiratory health, we have developed Respira Rhythm- an ML-based classification model that assesses your breathing as healthy or diseased.
-\n \n Respira Rhythm is accurate, reliable and trustworthy, just like a medical practitioner. It has been trained on authentic audio data and modelled for optimum accuracy. 
-')
+\n \n Respira Rhythm is accurate, reliable and trustworthy, just like a medical practitioner. It has been trained on authentic audio data and modelled for optimum accuracy.')
 
 def predict():
     st.title('Predict')
