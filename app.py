@@ -46,6 +46,8 @@ def about_us():
     ]
     # Create a grid layout using columns
     num_columns = 2  # Number of columns in the grid
+    image_width = 150  # Width of each image in pixels
+    
     with st.container():
         for i in range(0, len(founders), num_columns):
             cols = st.columns(num_columns)
@@ -53,7 +55,7 @@ def about_us():
                 if i + j < len(founders):
                     founder = founders[i + j]
                     cols[j].write(f"**{founder['name']}**")
-                    cols[j].image(founder['image_url'], use_column_width=True)
+                    cols[j].image(founder['image_url'], width=image_width)
                     cols[j].write(founder['description'])
 
 def main():
