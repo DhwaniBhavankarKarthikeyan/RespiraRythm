@@ -44,11 +44,17 @@ def about_us():
             'description': 'Tech enthusiast with a vision for accessible healthcare solutions.'
         }
     ]
-    for founder in founders:
-        st.write(f"**{founder['name']}**")
-        st.image(founder['image_url'], width=200)
-        st.write(founder['description'])
-        st.write("---")  # Separator between founders
+    # Create a grid layout using columns
+    num_columns = 2  # Number of columns in the grid
+    with st.container():
+        for i in range(0, len(founders), num_columns):
+            cols = st.columns(num_columns)
+            for j in range(num_columns):
+                if i + j < len(founders):
+                    founder = founders[i + j]
+                    cols[j].write(f"**{founder['name']}**")
+                    cols[j].image(founder['image_url'], use_column_width=True)
+                    cols[j].write(founder['description'])
 
 def main():
     option = st.sidebar.button('Home')
