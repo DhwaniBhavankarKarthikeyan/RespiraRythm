@@ -19,16 +19,31 @@ def predict():
 def about_us():
     st.title('About Us')
     st.write('Welcome to the About Us page!')
-    st.write("""
-        We are B.Tech students pursuing Artificial Intelligence and Machine Learning at Symbiosis Institute of Technology (SIT), Pune.
-        \n\n
-        **Our Mission:** To improve respiratory disease diagnostics using AI and reduce diagnostic costs.
-        \n\n
-        - Ananya Mehta
-        - Aparna Iyer
-        - Deeksha Mandal
-        - Dhwani Bhavankar
-    """)
+    st.subheader('Meet Our Team:')
+    
+    # Display images and details of founders
+    founders = [
+        {
+            'name': 'Ananya Mehta',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'AI enthusiast with a passion for healthcare innovation.'
+        },
+        {
+            'name': 'Aparna Iyer',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'ML engineer focused on leveraging technology for social impact.'
+        },
+        {
+            'name': 'Deeksha Mandal',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'Data science advocate dedicated to improving public health.'
+        },
+        {
+            'name': 'Dhwani Bhavankar',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'Tech enthusiast with a vision for accessible healthcare solutions.'
+        }
+    ]
 
 def main():
     option = st.sidebar.button('Home')
