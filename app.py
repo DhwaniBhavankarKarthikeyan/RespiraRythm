@@ -44,6 +44,11 @@ def about_us():
             'description': 'Tech enthusiast with a vision for accessible healthcare solutions.'
         }
     ]
+    for founder in founders:
+        st.write(f"**{founder['name']}**")
+        st.image(founder['image_url'], width=200)
+        st.write(founder['description'])
+        st.write("---")  # Separator between founders
 
 def main():
     option = st.sidebar.button('Home')
