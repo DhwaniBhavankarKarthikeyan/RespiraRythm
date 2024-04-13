@@ -31,31 +31,16 @@ def about_us():
     """)
 
 def main():
-    st.sidebar.title('Navigation')
-    
-    # Apply CSS to make buttons occupy full height
-    st.markdown("""
-        <style>
-        .sidebar .sidebar-content {
-            max-width: 100%;
-        }
-        .sidebar .sidebar-content .block-container {
-            width: 100%;
-        }
-        .sidebar .css-1tppvg2 {
-            width: 100%;
-            text-align: left;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    
-    option = st.sidebar.selectbox('Select Page', ('Home', 'Predict', 'About Us'))
-    
-    if option == 'Home':
+    option = st.sidebar.button('Home')
+    if option:
         home()
-    elif option == 'Predict':
+    
+    option = st.sidebar.button('Predict')
+    if option:
         predict()
-    elif option == 'About Us':
+    
+    option = st.sidebar.button('About Us')
+    if option:
         about_us()
 
 if __name__ == "__main__":
