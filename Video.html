@@ -7,52 +7,60 @@
     <style>
         body {
             font-family: Arial, sans-serif; /* Set a modern font */
-            background-color: #f4f4f4; /* Light gray background */
-            margin: 0;
-            padding: 20px; /* Add some padding around the body */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
             display: flex; /* Use flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full viewport height */
-            text-align: center; /* Center the text */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center elements horizontally */
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+        header {
+            background-color: #333; /* Dark background for header */
+            color: white; /* White text color */
+            width: 100%; /* Full width */
+            padding: 10px 20px; /* Padding inside the header */
+            text-align: center; /* Center text */
+        }
+
+        footer {
+            background-color: #333; /* Dark background for footer */
+            color: white; /* White text color */
+            width: 100%; /* Full width */
+            padding: 10px 20px; /* Padding inside the footer */
+            text-align: center; /* Center text */
+            position: absolute; /* Position at the bottom */
+            bottom: 0; /* Align to the bottom */
         }
 
         .container {
-            background-color: white; /* White background for the content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 20px; /* Add padding inside the container */
-            max-width: 800px; /* Limit the width */
-            width: 100%; /* Responsive width */
-        }
-
-        h1 {
-            color: #333; /* Dark gray for the heading */
-            margin-bottom: 20px; /* Space below the heading */
+            margin: 20px 0; /* Margin above and below the container */
+            text-align: center; /* Center the text inside the container */
         }
 
         video {
             width: 100%; /* Make the video responsive */
+            max-width: 640px; /* Limit the width */
+            border: 1px solid #ccc; /* Light gray border */
             border-radius: 4px; /* Rounded corners for the video */
-        }
-
-        .footer {
-            margin-top: 20px; /* Space above the footer */
-            font-size: 14px; /* Smaller text for the footer */
-            color: #666; /* Gray color for footer text */
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Demo Video Showcase</h1>
+    </header>
+    
     <div class="container">
-        <h1>Demo Video</h1>
+        <h2>Watch the Demo Video Below</h2>
         <video controls>
             <source src="https://raw.githubusercontent.com/ananya39mehta/RespiraRythm/refs/heads/main/DemoVideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="footer">
-            <p>Enjoy watching the demo video!</p>
-        </div>
     </div>
+    
+    <footer>
+        <p>© 2024 Your Name | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
