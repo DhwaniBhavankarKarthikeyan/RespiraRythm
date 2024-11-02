@@ -1,9 +1,7 @@
-# My Project
+# RespiraRythm
 
 This project showcases various features and functionalities.
 
 ## Watch the Video
 
-You can watch the demonstration video by clicking the link below:
-
-[Watch the Demo Video](https://raw.githubusercontent.com/ananya39mehta/RespiraRythm/refs/heads/main/DemoVideo.mp4)
+You can watch the demo video directly [here](https://ananya39mehta.github.io/RespiraRythm/Video.html).
