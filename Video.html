@@ -3,13 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Demo</title>
+    <title>Demo Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Set a modern font */
+            background-color: #f4f4f4; /* Light gray background */
+            margin: 0;
+            padding: 20px; /* Add some padding around the body */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            text-align: center; /* Center the text */
+        }
+
+        .container {
+            background-color: white; /* White background for the content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Add padding inside the container */
+            max-width: 800px; /* Limit the width */
+            width: 100%; /* Responsive width */
+        }
+
+        h1 {
+            color: #333; /* Dark gray for the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        video {
+            width: 100%; /* Make the video responsive */
+            border-radius: 4px; /* Rounded corners for the video */
+        }
+
+        .footer {
+            margin-top: 20px; /* Space above the footer */
+            font-size: 14px; /* Smaller text for the footer */
+            color: #666; /* Gray color for footer text */
+        }
+    </style>
 </head>
 <body>
-    <h1>Demo Video</h1>
-    <video width="640" height="480" controls>
-        <source src="https://raw.githubusercontent.com/ananya39mehta/RespiraRythm/refs/heads/main/DemoVideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="container">
+        <h1>Demo Video</h1>
+        <video controls>
+            <source src="https://raw.githubusercontent.com/ananya39mehta/RespiraRythm/refs/heads/main/DemoVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="footer">
+            <p>Enjoy watching the demo video!</p>
+        </div>
+    </div>
 </body>
 </html>
