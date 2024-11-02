@@ -1,14 +1,16 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 
 def home():
     st.title('Home')
-    st.write('Welcome to the Home page!\n')
-    st.write('Hello and welcome to Respira Rhythm Classifier!\n')
-    st.write('Thank you for taking the judicious step of using this application. By visiting this page, you have joined us in a very important cause- the cause of proactively monitoring your health without waiting for symptomatic check-up, diagnosis and treatment. \n \n')
-    st.write("This matters because lung diseases are the third-largest cause of death in the world. According to the World Health Organization (WHO), the five major respiratory diseases cause the death of more than 3 million people worldwide each year. Furthermore, respiratory problems are progressive in nature, worsening the respiratory potential of the human lungs over time.\n")
-    st.write("We believe that prevention is better than cure. To facilitate simple, quick and virtually cost-free diagnostic access for monitoring respiratory health, we have developed Respira Rhythm- an ML-based classification model that assesses your breathing as healthy or diseased.")
-    st.write("Respira Rhythm is accurate, reliable and trustworthy, just like a medical practitioner. It has been trained on authentic audio data and modelled for optimum accuracy.")
+    st.header('Welcome to Respira Rhythm Classifier!')
+    st.write("""
+        Thank you for using this application. By visiting this page, you've joined us in the important cause of proactively monitoring your health.
+        \n\n
+        Lung diseases are a major global issue, contributing to millions of deaths yearly. Respiratory problems can worsen over time.
+        \n\n
+        Prevention is crucial. We've developed Respira Rhythm—an ML-based model to assess your breathing health.
+        It's accurate, reliable, and trustworthy, trained on authentic data for optimum accuracy.
+    """)
 
 def predict():
     st.title('Predict')
@@ -17,40 +19,54 @@ def predict():
 def about_us():
     st.title('About Us')
     st.write('Welcome to the About Us page!')
-    st.write('We are B.Tech students pursuing Artificial Intelligence and Machine Learning at Symbiosis Institute of Technology (SIT), Pune.\n')
-    st.write('Our Mission: To help improve the diagnostic accuracy of classifying respiratory diseases based on breathing sounds, while reducing diagnostic costs. All through the power of data and ML.\n')
-    st.write('Ananya Mehta \n \n')
-    st.write('Aparna Iyer \n \n')
-    st.write('Deeksha Mandal \n \n')
-    st.write('Dhwani Bhavankar \n \n')
-# Main function to switch between pages
+    st.subheader('Meet Our Team:')
+    
+    # Display images and details of founders
+    founders = [
+        {
+            'name': 'Ananya Mehta',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'AI enthusiast with a passion for healthcare innovation.'
+        },
+        {
+            'name': 'Aparna Iyer',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'ML engineer focused on leveraging technology for social impact.'
+        },
+        {
+            'name': 'Deeksha Mandal',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'Data science advocate dedicated to improving public health.'
+        },
+        {
+            'name': 'Dhwani Bhavankar',
+            'image_url': 'https://tse3.explicit.bing.net/th?id=OIP.VIplnCsGqHdRbTyZj1sJOQHaHa&pid=Api&P=0&h=180',
+            'description': 'Tech enthusiast with a vision for accessible healthcare solutions.'
+        }
+    ]
+    # Create a grid layout using columns
+    num_columns = 2  # Number of columns in the grid
+    image_width = 150  # Width of each image in pixels
+    
+    with st.container():
+        for i in range(0, len(founders), num_columns):
+            cols = st.columns(num_columns)
+            for j in range(num_columns):
+                if i + j < len(founders):
+                    founder = founders[i + j]
+                    cols[j].write(f"**{founder['name']}**")
+                    cols[j].image(founder['image_url'], width=image_width)
+                    cols[j].write(founder['description'])
+
 def main():
-    st.sidebar.title('Navigation')
-    
-    # Apply CSS to make buttons occupy full height
-    st.markdown("""
-        <style>
-        .sidebar .sidebar-content {
-            max-width: 100%;
-        }
-        .sidebar .sidebar-content .block-container {
-            width: 100%;
-        }
-        .sidebar .css-1tppvg2 {
-            width: 100%;
-            text-align: left;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    
     option = st.sidebar.button('Home')
     if option:
         home()
-        
+    
     option = st.sidebar.button('Predict')
     if option:
         predict()
-        
+    
     option = st.sidebar.button('About Us')
     if option:
         about_us()
