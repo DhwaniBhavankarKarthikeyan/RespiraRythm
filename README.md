@@ -1,1 +1,9 @@
-[Watch the video]([https://ananya39mehta.github.io/RespiraRythm/DemoVideo.mp4](https://github.com/ananya39mehta/RespiraRythm/blob/main/DemoVideo.mp4))
+# My Project
+
+This project showcases various features and functionalities.
+
+## Watch the Video
+
+You can watch the demonstration video by clicking the link below:
+
+[Watch the Demo Video](https://raw.githubusercontent.com/ananya39mehta/RespiraRythm/refs/heads/main/DemoVideo.mp4)
